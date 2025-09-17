@@ -1,7 +1,7 @@
 {
   mdbook,
   mdbook-pdf,
-  chromium,
+  ungoogled-chromium,
   stdenvNoCC,
   vmTools,
 }:
@@ -17,7 +17,7 @@ let
         nativeBuildInputs = [
           mdbook
           mdbook-pdf
-          chromium
+          ungoogled-chromium
         ];
         passthru = {
           pdf = mkBook { pdf = true; };
