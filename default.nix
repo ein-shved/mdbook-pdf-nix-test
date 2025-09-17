@@ -4,6 +4,7 @@
   ungoogled-chromium,
   stdenvNoCC,
   vmTools,
+  fontconfig,
 }:
 let
   mkBook =
@@ -34,6 +35,7 @@ let
         '';
         configurePhase = ''
           mv src/book-${if pdf then "pdf" else "html"}.toml book.toml
+          export FONTCONFIG_FILE="${fontconfig.out}/etc/fonts/fonts.conf"
         '';
         buildPhase = ''
           mdbook build -d $out
